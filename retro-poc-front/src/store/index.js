@@ -5,11 +5,14 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+    socket: {
+      isConnected: false,
+      message: 'Pas de message',
+      error: false,
+    },
   },
-  mutations: {
-  },
-  actions: {
-  },
-  modules: {
+  getters: {
+    isConnected: (state) => state.socket.isConnected,
+    getMessage: (state) => state.socket.message,
   },
 });
